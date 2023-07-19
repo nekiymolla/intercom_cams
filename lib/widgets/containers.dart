@@ -200,6 +200,9 @@ class _bodyCamsPageState extends State<bodyCamsPage> {
             child: Column(
               children: <Widget>[
                 advertising(context, 0),
+                SizedBox(
+                  height: 5,
+                ),
                 OneCamContainer(context, activeIndex),
                 const SizedBox(
                   height: 10,
@@ -248,6 +251,7 @@ Widget errorConnection() {
   return RefreshIndicator(
       onRefresh: _controllerCamsList.onRefresh,
       child: Container(
+          color: Colors.white,
           child: (_controllerCamsList.hasError.isTrue ||
                   _controllerAdvert.hasError.isTrue)
               ? Center(
@@ -257,7 +261,7 @@ Widget errorConnection() {
                       Text('Потеряна связь с интернетом',
                           style: GoogleFonts.montserrat(
                               textStyle: const TextStyle(
-                                  color: Color(0xFF04764E),
+                                  color: Colors.blue,
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold))),
                       const SizedBox(
@@ -268,8 +272,7 @@ Widget errorConnection() {
                           child: Text(
                             "Обновить",
                             style: GoogleFonts.montserrat(
-                                textStyle:
-                                    const TextStyle(color: Color(0xFF04764E))),
+                                textStyle: const TextStyle(color: Colors.blue)),
                           ))
                     ],
                   ),

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class CamsListDataViewModel {
   String? url;
   String? house;
